@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.106/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.106/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style type="text/css">
+    #toggle-building { z-index: 1; position: fixed; top: 5px; left: 5px; }
+  </style>
+</head>
+<body>
+  <div id="cesiumContainer"></div>
+  <button id="toggle-building">Toggle new building</button>
+  
+  <script>
+    // Your access token can be found at: https://ion.cesium.com/tokens.
+    // This is the default access token from your ion account
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMTc4MDJhOC0yMTBiLTRkNTQtYWJlZS1lMjZkNzM0MGQzNWYiLCJpZCI6MTQ2Mjg0LCJpYXQiOjE2ODY1NjAxODR9.Yinevhgs_CSnDHtpII8UNg4Ao0Y69eRLBIcGrjltBmE';
+
+const viewer = new Cesium.Viewer("cesiumContainer", {
+  terrainProvider: new Cesium.CesiumTerrainProvider({
+    url: Cesium.IonResource.fromAssetId(1),
+  }),
+});
+viewer.scene.globe.depthTestAgainstTerrain = true;
+    
+(async () => {
+  try {
+    const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(1831936);
+    viewer.scene.primitives.add(tileset);
+    await viewer.zoomTo(tileset);
+     // STEP 7 CODE
+    // Toggle the tileset's show property when the button is clicked.
+    document.querySelector('#toggle-building').onclick = function() {
+      tileset.show = !tileset.show;
+    };
+
+    // Apply the default style if it exists
+    const extras = tileset.asset.extras;
+    if (
+      Cesium.defined(extras) &&
+      Cesium.defined(extras.ion) &&
+      Cesium.defined(extras.ion.defaultStyle)
+    ) {
+      tileset.style = new Cesium.Cesium3DTileStyle(extras.ion.defaultStyle);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})();
+
+
+// 6.5336,42; 51.3435,50
+   
+  </script>
+</body>
+</html>
