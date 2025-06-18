@@ -77,7 +77,10 @@
 <body>
   <div class="container">
     <h1> Bottroper Wahlplakat-Management und Informationssystem (BOWIs)</h1>
-    <h3> Das BOWIs ermöglicht die einfache Erfassung von Wahlplakat-Standorten per WhatsApp, stellt die Daten automatisiert als CSV für die Verwaltung bereit und visualisiert sie gleichzeitig übersichtlich in einer interaktiven Karte.</h3>
+    <h3> Das BOWIs ermöglicht die einfache Erfassung von Wahlplakat-Standorten die per WhatsApp-Standort übermittelt werden, indem es die Koordinate mit einer eigenen 
+      Heuristik (Extraktion aus einem GoogleMaps-Link) aus dem Standort extrahiert. Mit der Eingabe des GoogleMaps Link  wird eine relationelle 
+      Datenbank zu Plakatstandorten erstellt, die sich 1) über einen csv Export an die Verwaltung bereitstellen lässt und 
+      2) über eine csv Schnittstelle an einer Kartenanwendung über Leaflet interaktive Karte visualisieren lässt.</h3>
 
     <div class="iframe-card">
       <div class="iframe-title">Standort-Manager</div>
