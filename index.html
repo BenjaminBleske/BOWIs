@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOWIs</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f8fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 16px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #194e63;
+      letter-spacing: 1px;
+    }
+    .iframe-card {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px #0002;
+      padding: 16px;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      transition: box-shadow 0.2s;
+    }
+    .iframe-card:hover {
+      box-shadow: 0 4px 32px #0003;
+    }
+    .iframe-title {
+      font-size: 1.3em;
+      margin-bottom: 16px;
+      color: #52b7c1;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    iframe {
+      width: 100%;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      background: #fff;
+    }
+    /* Höhenanpassungen */
+    #standortmanager {
+      height: 1300px;
+    }
+    #plakatkarte-direkt {
+      height: 500px;
+    }
+    #csv-api-karte {
+      height: 170px;
+    }
+    @media (max-width: 600px) {
+      #standortmanager {
+        height: 500px;
+      }
+      #plakatkarte-direkt {
+        height: 350px;
+      }
+      #csv-api-karte {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Bottroper Wahlplakat-Management und Informationssystem (BOWIs)</h1>
+
+    <div class="iframe-card">
+      <div class="iframe-title">Standort-Manager</div>
+      <iframe id="standortmanager" src="https://panoramic-fifth-pyrite.glitch.me" loading="lazy"></iframe>
+    </div>
+
+    <div class="iframe-card">
+      <div class="iframe-title">CSV-Schnittstelle zum Fastify Server</div>
+      <iframe id="csv-api-karte" src="https://majestic-somber-dracopelta.glitch.me" loading="lazy"></iframe>
+    </div>
+    
+    <div class="iframe-card">
+      <div class="iframe-title">Plakatstandortkarte</div>
+      <iframe id="plakatkarte-direkt" src="https://majestic-somber-dracopelta.glitch.me/karte" loading="lazy"></iframe>
+    </div>
+
+    
+  </div>
+</body>
+</html>
