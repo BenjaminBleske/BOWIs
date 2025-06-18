@@ -1,5 +1,7 @@
 # Bottroper Wahlplakat-Management und Informationssystem (BOWIs)
 
+https://benjaminbleske.github.io/BOWIs/ 
+
 ## Projektübersicht
 Das BOWIs ist ein webbasiertes System zur digitalen Erfassung, Verwaltung und Visualisierung von Wahlplakat-Standorten für die CDU Bottrop. Es ermöglicht eine einfache und effiziente Kommunikation der Plakatierungsdaten durch Helfer:innen via WhatsApp-Standortmeldungen.
 
@@ -33,3 +35,6 @@ Projektverantwortlicher: Benjamin Bleske
 
 
 *Stand: Juni 2025*
+
+https://glitch.com/edit/#!/panoramic-fifth-pyrite
+https://glitch.com/edit/#!/majestic-somber-dracopelta
